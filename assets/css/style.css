@@ -4,40 +4,45 @@
   }
 
 body {
-    font-family: 'Source Code Pro', monospace;
-    /* background-image: url("../images/image1.jpg"); */
-    background: rgb(221, 220, 220);
+    font-family: 'Nunito', sans-serif;
+    background: rgb(43, 43, 43);
+    background-image: url("../images/background1.png");
     margin: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     height: auto;
 }
 
 .logo {
-    font-weight: normal;
+    font-weight: lighter;
     color: white;
 }
 
-/* Main Content styles start here */
+/* Home Content styles start here */
 
 .grid-container {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 3fr;
     grid-gap: 1em;
     grid-auto-rows: minmax(200px, auto);
     width: 70%;
+    height: 30%;
     margin: 0 auto;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .grid-container > div {
     padding: 1em;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* border: 1px solid black; */
+    font-size: large;
+}
+
+.name {
     border: 1px solid black;
-    font-size: x-large;
 }
 
 /* Portfolio content starts here */
@@ -57,40 +62,26 @@ body {
 }
 
 .portfolio-grid > div {
-    /* background: rgba(78, 78, 78, 0.25);
-    border-radius: 3px;  */
     padding: 1em;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    /* filter: grayscale(100%); */
     position: relative;
-    display: inline-block;
-}
-
-/* .pimages {
-    transition: filter .5s ease-in-out;
-    filter: grayscale(100%);
-} */
-
-/* .pimages:hover {
-    filter: grayscale(0%);
-} */
+    display: flex;
+}   
 
 .proNames {
     position: absolute;
     display: inline-block;
     text-align: center;
     bottom: 1em;
-    background: rgba(53, 82, 87, 0.45); 
-    width: 50%;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
     padding: 1em;
-    /* transition: width 2s; */
+    transition: width 2s;
 }
 
 .proNames:hover {
-    background: rgba(53, 82, 87);
+    background: rgba(0, 0, 0, 0.75);
     width: 100%;
     transition: width 2s;
-    font-weight: bold;
 }
 
 .project a {
@@ -99,20 +90,116 @@ body {
     filter: grayscale(100%);
 }
 .project a:hover {
+    transition: filter .5s ease-in-out;
     filter: grayscale(0%);
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
 }
+
+/* Contact styles start here */
+
+.contact-grid {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 5fr; */
+    grid-gap: 1em;
+    /* grid-auto-rows: minmax(auto, auto); */
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social-media > i {
+    padding: 10px;
+}
+
+#contact {
+    padding-bottom: 1px;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;   
+    background: rgba(53, 87, 76, 0.45);
+    border-radius: 0px 0px 6px 6px;
+    min-width: auto;
+    height: auto;
+    z-index: 999;
+}
+
+.dropdown-content ul li {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+  
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    /* padding: 12px 16px; */
+    padding-top: 1em;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {
+    color: black;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: inline-flex;
+}
+
+/* nav ul li ul{
+    display: inline-flexbox;
+    position: absolute;
+    display: none;
+    position: absolute;
+    top: 200%;   
+    background-color: rgba(78, 87, 53, 0.95);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+nav ul li ul li {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+}
+
+nav ul li ul li a:hover {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+    background-color: rgba(78, 87, 53, 0.95);
+    color: black;
+} */
+
+
+
 
 
 /* Navigation styles start here */
 
 header {
-    background: rgba(53, 82, 87, 0.65);
+    /* background: rgba(53, 87, 76, 0.45); */
+    /* box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5); */
     position: fixed;
     text-align: center;
     width: 100%;
-    z-index: 999;
+    z-index: 998;
+    border-bottom: 1px solid black;
     border-radius: 3px; 
 }
+
+
 
 .nav-toggle {
     display: none;
@@ -158,7 +245,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: rgba(53, 82, 87, 0.85);
+    background: rgba(78, 87, 53, 0.95);
     width: 100%;
     transform: scale(1,0);
     transform-origin: top;
@@ -174,6 +261,7 @@ nav ul {
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
+    position: relative;
 }
 
 nav a {
@@ -184,6 +272,7 @@ nav a {
     font-size: smaller;
     opacity: 0;
     transition: opacity 150ms ease-in-out;
+    padding-bottom: 20px;
 }
 
 nav a:hover {
